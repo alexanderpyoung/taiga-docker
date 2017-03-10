@@ -17,7 +17,7 @@ WORKDIR /usr/src/app/taiga-back
 EXPOSE 8000
 
 ## Volume definition in docker-compose.yml instead of here
-# VOLUME ["/taiga/static","/taiga/media"]
+VOLUME ["/usr/src/app/taiga-back/static","/usr/src/app/taiga-back/media"]
 
 
 RUN locale -a
