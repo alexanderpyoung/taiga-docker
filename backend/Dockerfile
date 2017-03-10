@@ -9,7 +9,7 @@ COPY default.locale /etc/default/locale
 
 RUN apt-get update  && apt-get autoremove -y && apt-get install locales -y
 RUN locale-gen en_US.UTF-8 && dpkg-reconfigure locales
-
+RUN sed -i 's@{{secret_key}}@'$(openssl rand -hex 2048)'@g' /usr/src/app/taiga-back/settings/local.py
 # RUN (cd /taiga && python manage.py collectstatic --noinput)
 
 WORKDIR /usr/src/app/taiga-back
