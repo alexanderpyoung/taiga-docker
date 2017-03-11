@@ -5,11 +5,11 @@ if [[ -z "$API_NAME" ]]; then
 fi
 
 if [[ -z "$API_PORT" ]]; then
-  API_NAME="8000";
+  API_PORT="8000";
 fi
 
 if [[ -z "$API_PROTOCOL" ]]; then
-  API_NAME="http";
+  API_PROTOCOL="http";
 fi
 
 docker pull lxndryng/taiga-back
